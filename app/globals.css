@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-paper: #eef1f6;
+  --color-panel: #ffffff;
+  --color-ink: #1c2130;
+  --color-ink-soft: #5c6478;
+  --color-line: #dde2ec;
+
+  --color-todo: #5b6b8c;
+  --color-todo-soft: #eef0f6;
+  --color-progress: #c9862f;
+  --color-progress-soft: #fbf1e2;
+  --color-done: #3f8562;
+  --color-done-soft: #e8f3ec;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  background-image:
+    radial-gradient(circle at 1px 1px, var(--color-line) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+@keyframes card-drop {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-card-drop {
+  animation: card-drop 0.18s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
